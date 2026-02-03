@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Question 😏</title>
+
+<style>
+  body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
+
+  button {
+    padding: 15px 35px;
+    font-size: 18px;
+    margin: 10px;
+    border-radius: 8px;
+    border: none;
+  }
+
+  #oui {
+    background: #25D366;
+    color: white;
+  }
+
+  #non {
+    background: #ccc;
+    position: absolute;
+  }
+</style>
+</head>
+
+<body>
+
+<h2>Tu acceptes ? 😌</h2>
+
+<button id="oui" onclick="alert('Bonne réponse 😍')">OUI</button>
+<button id="non">NON</button>
+
+<script>
+  const non = document.getElementById("non");
+
+  function moveButton() {
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 60);
+    non.style.left = x + "px";
+    non.style.top = y + "px";
+  }
+
+  non.addEventListener("touchstart", moveButton);
+  non.addEventListener("mouseover", moveButton);
+</script>
+
+</body>
+</html>
